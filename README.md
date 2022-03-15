@@ -16,7 +16,8 @@ then run what you neet to; example:
 **TIP**: if you need to install a specific python version  
 and you don't want to take the chance of breaking your system installation,  
 try using **pyenv** (https://github.com/pyenv/pyenv)  
-**TIP**: it's a good practice to use a virtual environment to install new python packages;     
+**TIP**: it's a good practice to use a virtual environment to install  
+python packages for a specific use (for example, a new project);     
 this way differents virtual environment are indepentent from each other;  
 try using the pyenv plug-in for virtual environment management, **pyenv-virtualenv** (https://github.com/pyenv/pyenv-virtualenv)  
 
