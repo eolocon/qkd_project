@@ -3,4 +3,5 @@ WORKDIR /project
 COPY ./requirements.txt /project/requirements.txt
 RUN pip install --requirement requirements.txt
 COPY . .
+RUN chmod u+x docker-scripts/*
 
