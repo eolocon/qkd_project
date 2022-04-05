@@ -43,7 +43,7 @@ example:
 `docker-scripts/start-jupyter.sh <image_name>  `
 
 ### Jupyter notebooks inside containers  
-When running inside a container, the output from jupyter will look like:  
+When running inside a container, the output from jupyter will looks like:  
 
 `To access the notebook, open this file in a browser:   
         file:///root/.local/share/jupyter/runtime/nbserver-1-open.html    
