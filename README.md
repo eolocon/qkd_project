@@ -40,16 +40,19 @@ example:
 `docker-scripts/<script-name>  `
 
 example:    
-`docker-scripts/start-jupyter.sh  `
+`docker-scripts/start-jupyter.sh <image_name>  `
 
 ### Jupyter notebooks inside containers  
 When running inside a container, the output from jupyter will look like:  
 
-`http://jupyter:8888/?token=<access token>  `
+`To access the notebook, open this file in a browser:   
+        file:///root/.local/share/jupyter/runtime/nbserver-1-open.html    
+    Or copy and paste one of these URLs:    
+        http://jupyter:8888/?token=d8315e57f7a6f343015a77dfb7758913913c7a7978a7d554    
+     or http://127.0.0.1:8888/?token=d8315e57f7a6f343015a77dfb7758913913c7a7978a7d554    
+`
 
-to access from outside the container, copy that link in a browser and replace 'jupyter' with 'localhost':  
-
-`http://localhost:8888/?token=<access token>  `
+to access from outside the container, copy the link starting with `http://127.0.0.1:8888` in a browser.   
 
 **NOTE**: this will work if the server port in the container is binded to a local port; if you used a convenience script, this would be the case
 
