@@ -1,7 +1,6 @@
 from bitstring import Bits
 from random import choices, sample
 from math import floor, ceil
-from scipy.spatial.distance import hamming
 
 def errors_bitvector(bitvector_a, bitvector_b):
 	return bitvector_a ^ bitvector_b
@@ -10,10 +9,7 @@ def extract_sample(population, bitvector):
 	return Bits([population[i] for i in range(len(population)) if bitvector[i]])
 
 def flip_bitvector(bitvector):
-	return ~bitvector
-
-def parameter_estimation(bitvector_a, bitvector_b):
-	return hamming(bitvector_a, bitvector_b)
+	return ~bitvector	
 
 def add_noise(bitvector, probability=0.2):
 	noise = Bits(choices(population=(0,1), weights=[(1-probability), probability], k=len(bitvector)))
