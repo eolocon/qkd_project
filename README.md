@@ -37,10 +37,10 @@ example:
 
 ### Running containers using convenience scripts  
 
-`docker-scripts/<script-name>  `
+`docker-scripts/<script-name> [<parameters>] `
 
 example:    
-`docker-scripts/start-jupyter.sh <image_name>  `
+`docker-scripts/start-jupyter.sh qkd-project <port> ` 
 
 ### Jupyter notebooks inside containers  
 When running inside a container, the output from jupyter will looks like:  
@@ -48,11 +48,11 @@ When running inside a container, the output from jupyter will looks like:
 `To access the notebook, open this file in a browser:   
         file:///root/.local/share/jupyter/runtime/nbserver-1-open.html    
     Or copy and paste one of these URLs:    
-        http://jupyter:8888/?token=d8315e57f7a6f343015a77dfb7758913913c7a7978a7d554    
-     or http://127.0.0.1:8888/?token=d8315e57f7a6f343015a77dfb7758913913c7a7978a7d554    
+        http://localhost:<port>/?token=d8315e57f7a6f343015a77dfb7758913913c7a7978a7d554    
+     or http://127.0.0.1:<port>/?token=d8315e57f7a6f343015a77dfb7758913913c7a7978a7d554    
 `
 
-to access from outside the container, copy the link starting with `http://127.0.0.1:8888` in a browser.   
+to access from outside the container, copy the link starting with `http://localhost:<port>` or `http://127.0.0.1:<port>`in a browser.   
 
-**NOTE**: this will work if the server port in the container is binded to a local port; if you used a convenience script, this would be the case
+**NOTE**: this will work if the server port in the container is binded to a local port; if you used the convenience script, this would be the case
 
