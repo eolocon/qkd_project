@@ -7,7 +7,7 @@ class Estimator:
 
 	"""
 	def estimate(self, a_sample, b_sample):
-		"""Computes the CHSH parameter.
+		"""Computes the hamming distance of a_sample and b_sample
 
 		Parameters
 		----------

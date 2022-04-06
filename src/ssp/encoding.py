@@ -1,7 +1,7 @@
 from qiskit import QuantumCircuit
 
 class Encoder:
-	"""Encoder for BB84 protocol.
+	"""Encoder for Six State protocol.
 
 	Creates an array of states according to the protocol
 
@@ -28,10 +28,12 @@ class EncodingCircuit:
 
 	According to the protocol, the states are:
 
-	|0> if a_raw_bit == 0 and a_basis == 0
-	|1> if a_raw_bit == 1 and a_basis == 0
-	|+> if a_raw_bit == 0 and a_basis == 1
-	|-> if a_raw_bit == 1 and a_basis == 1
+	|0z>           if a_raw_bit == 0 and a_basis == 0
+	|1z> =   X|0z> if a_raw_bit == 1 and a_basis == 0
+	|0x> =   H|0z> if a_raw_bit == 0 and a_basis == 1
+	|1x> =  HX|0z> if a_raw_bit == 1 and a_basis == 1
+	|0y> =  SH|0z> if a_raw_bit == 2 and a_basis == 0
+	|1y> = SHX|0z> if a_raw_bit == 2 and a_basis == 1
 	
 	Attributes
 	----------
@@ -47,6 +49,8 @@ class EncodingCircuit:
 		self.circuit = QuantumCircuit(1)
 		if a_raw_bit:
 			self.circuit.x(0)
-		if a_basis:
+		if a_basis != 0:
 			self.circuit.h(0)
+			if a_basis == 2:
+				self.circuit.s(0)
 		self.circuit.barrier()
